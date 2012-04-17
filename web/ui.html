@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<meta name="viewport" content="width=device-width, minimum-scale=0.1, maximum-scale=1.0, user-scalable=yes">
+<title>Touch Me!</title>
+<style type="text/css">
+    * {
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+    }
+</style>
+<script>
+function loaded() {
+    setTimeout(function() { window.scrollTo(0, 1) }, 100);
+    xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "ui.json");
+    xhttp.onreadystatechange = function() {
+	if (xhttp.readyState == 4) {
+	    uitxt = xhttp.responseText
+	    // evaluate the patch as a chunk of JavaScript
+	    ui = eval("(" + uitxt + ")")
+	    renderUi(ui);
+	}
+    }
+    xhttp.send("");
+}
+
+window.addEventListener('load', loaded, true);
+</script>
+
+</head>
+<body>
+
+<script type="text/javascript" charset="utf-8" src="touches.js"></script>
+<script type="text/javascript" src="interface.js"></script>
+</body>
+</html>

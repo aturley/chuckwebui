@@ -1,0 +1,17 @@
+container
+{
+	"port": PORT (int),
+	"elements": ELEMENTS (hash),
+}
+
+element
+{
+	"type": TYPE (string),
+	"id": ID (string),
+	"name": NAME (string),
+	"x": X (int),
+	"y": Y (int),
+	"height": HEIGHT (int),
+	"width": WIDTH (int),
+}
+
